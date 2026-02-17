@@ -25,7 +25,7 @@
             <h4 class="font-bold text-sm">Temukan Pembina Kamu</h4>
         </a>
 
-        <a href="absen_tidak_melayani.php" class="glass-card p-6 rounded-3xl flex flex-col justify-between bg-red-900/10 border-red-500/20 cursor-pointer group">
+        <a href="absensi_tidak_melayani.php" class="glass-card p-6 rounded-3xl flex flex-col justify-between bg-red-900/10 border-red-500/20 cursor-pointer group">
             <i class="fab fa-youtube text-red-500 text-xl group-hover:scale-110 transition"></i>
             <h4 class="font-bold text-[10px] leading-tight">Absen Frontliner Yang Tidak Melayani</h4>
         </a>

@@ -1,6 +1,5 @@
 <?php
 session_start();
-// 1. Koneksi Database
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -9,7 +8,6 @@ $koneksi = mysqli_connect($host, $user, $pass, $db);
 
 $error = "";
 
-// 2. Logika Login
 if (isset($_POST['login'])) {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $password = $_POST['password'];
@@ -20,25 +18,20 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         
-        // Verifikasi password hash
         if (password_verify($password, $row['password'])) {
-            // Set Session
             $_SESSION['admin_logged_in'] = true;
+            $_SESSION['id_user'] = $row['id_user']; 
             $_SESSION['username'] = $row['username'];
-            $_SESSION['level'] = $row['level']; // Mengambil level dari database
+            $_SESSION['level'] = $row['level']; 
             
-            // Pengalihan Berdasarkan Level
             if ($row['level'] === 'pembina') {
                 header("Location: admin/index.php");
             } elseif ($row['level'] === 'frontliner') {
                 header("Location: frontliner/index.php");
-            } else {
-                // Jika ada level lain di masa depan
-                header("Location: index.php");
             }
             exit;
         } else {
-            $error = "Password salah! (Hash tidak cocok)";
+            $error = "Password salah!";
         }
     } else {
         $error = "Username tidak ditemukan!";

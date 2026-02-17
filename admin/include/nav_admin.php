@@ -49,6 +49,7 @@
                     ['url' => 'kelola_dresscode.php', 'icon' => 'fa-shirt', 'label' => 'Dresscode'],
                     ['url' => 'prayer_request.php', 'icon' => 'fa-hands-praying', 'label' => 'Prayer Requests'],
                     ['url' => 'kelola_open_ministry.php', 'icon' => 'fa-users-rays', 'label' => 'Open Ministry'],
+                    ['url' => 'cek_absensi.php', 'icon' => 'fa-users-rays', 'label' => 'Cek Absensi'],
                 ];
 
                 foreach ($menus as $menu):
